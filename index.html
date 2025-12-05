@@ -158,9 +158,9 @@
         .quota-details {
             display: none;
             grid-column: 1 / -1;
-            padding: 24px 0 0 0;
-            border-top: 2px solid #e2e8f0;
-            margin-top: 20px;
+            padding: 16px 0 0 0;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
         }
         
         .survey-row.expanded .quota-details {
@@ -168,51 +168,68 @@
         }
         
         .quota-section-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 16px;
-        }
-        
-        .quota-group {
-            margin-bottom: 24px;
-        }
-        
-        .quota-group-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: #475569;
             margin-bottom: 12px;
-            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .quota-group {
+            margin-bottom: 16px;
+        }
+        
+        .quota-group-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
             border-bottom: 1px solid #e2e8f0;
         }
         
         .quota-item {
-            padding: 16px;
-            margin-bottom: 12px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
             background: white;
-            border-radius: 6px;
-            border-left: 3px solid #2563eb;
+            border-radius: 4px;
+            border-left: 2px solid #2563eb;
         }
         
         .quota-name {
             font-weight: 600;
             color: #1e293b;
-            margin-bottom: 12px;
-            font-size: 14px;
+            margin-bottom: 6px;
+            font-size: 12px;
         }
         
         .quota-progress {
-            font-size: 12px;
+            font-size: 11px;
             color: #64748b;
-            margin-top: 8px;
+            margin-top: 6px;
             display: flex;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }
         
         .quota-progress span {
             display: inline-block;
+        }
+        
+        .quota-progress-bar {
+            width: 100%;
+            height: 18px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 6px 0;
+        }
+        
+        .quota-progress-fill {
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.3s ease;
         }
         
         .empty {
@@ -247,7 +264,7 @@
         <div class="container">
             <div class="header">
                 <h1>PureSpectrum Survey Dashboard</h1>
-                <p>Last updated: 2025-12-05 16:00:29</p>
+                <p>Last updated: 2025-12-05 16:07:01</p>
             </div>
         </div>
     </div>
@@ -261,18 +278,18 @@
             <div class="survey-row" onclick="toggleQuota('45951950', event)">
                 <div class="survey-name">Coles Tracker Project RB Wave 2 Week 7</div>
                 <div class="survey-progress">
-                    <div class="progress-text">25 / 500 (5.0%)</div>
+                    <div class="progress-text">29 / 500 (5.8%)</div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 5.0%"></div>
+                        <div class="progress-fill" style="width: 5.800000000000001%"></div>
                     </div>
                 </div>
                 <div class="metric">
                     <div class="metric-label">CPI</div>
-                    <div>$3.08</div>
+                    <div>$3.21</div>
                 </div>
                 <div class="metric">
                     <div class="metric-label">Cost</div>
-                    <div>$77.00</div>
+                    <div>$93.00</div>
                 </div>
                 <div class="metric">
                     <div class="metric-label">LOI</div>
@@ -280,56 +297,56 @@
                 </div>
                 <div class="metric">
                     <div class="metric-label">IR</div>
-                    <div>7500.0%</div>
+                    <div>75.0%</div>
                 </div>
                 <div class="quota-details" id="quota-45951950">
 <div class="quota-section-title">Quota Details</div><div class="quota-group"><div class="quota-group-title">Children</div>
                         <div class="quota-item">
                             <div class="quota-name"></div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 5.483870967741936%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 6.129032258064516%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 17 / 310 (5.5%)</span>
+                                <span><strong>Fielded:</strong> 19/310 (6.1%)</span>
                                 <span><strong>Target:</strong> 316</span>
-                                <span><strong>Open:</strong> 299</span>
+                                <span><strong>Open:</strong> 297</span>
                                 <span><strong>In Progress:</strong> 0</span>
                             </div>
                         </div>
 
                         <div class="quota-item">
                             <div class="quota-name"></div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 4.2105263157894735%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 5.7894736842105265%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 8 / 190 (4.2%)</span>
+                                <span><strong>Fielded:</strong> 11/190 (5.8%)</span>
                                 <span><strong>Target:</strong> 194</span>
-                                <span><strong>Open:</strong> 186</span>
+                                <span><strong>Open:</strong> 183</span>
                                 <span><strong>In Progress:</strong> 0</span>
                             </div>
                         </div>
 </div><div class="quota-group"><div class="quota-group-title">Nested</div>
                         <div class="quota-item">
                             <div class="quota-name">Male, 60-69 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 21.62162162162162%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 24.324324324324326%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 8 / 37 (21.6%)</span>
+                                <span><strong>Fielded:</strong> 9/37 (24.3%)</span>
                                 <span><strong>Target:</strong> 37</span>
-                                <span><strong>Open:</strong> 29</span>
+                                <span><strong>Open:</strong> 28</span>
                                 <span><strong>In Progress:</strong> 0</span>
                             </div>
                         </div>
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 50-59 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 6.382978723404255%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 6.382978723404255%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 3 / 47 (6.4%)</span>
+                                <span><strong>Fielded:</strong> 3/47 (6.4%)</span>
                                 <span><strong>Target:</strong> 47</span>
                                 <span><strong>Open:</strong> 44</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -338,11 +355,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 40-49 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 5.769230769230769%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 5.769230769230769%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 3 / 52 (5.8%)</span>
+                                <span><strong>Fielded:</strong> 3/52 (5.8%)</span>
                                 <span><strong>Target:</strong> 52</span>
                                 <span><strong>Open:</strong> 49</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -351,24 +368,24 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 30-39 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 9.615384615384617%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 15.384615384615385%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 5 / 52 (9.6%)</span>
+                                <span><strong>Fielded:</strong> 8/52 (15.4%)</span>
                                 <span><strong>Target:</strong> 52</span>
-                                <span><strong>Open:</strong> 47</span>
+                                <span><strong>Open:</strong> 44</span>
                                 <span><strong>In Progress:</strong> 0</span>
                             </div>
                         </div>
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 25-29 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 26 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/26 (0.0%)</span>
                                 <span><strong>Target:</strong> 26</span>
                                 <span><strong>Open:</strong> 26</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -377,11 +394,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 18-24 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 2.7027027027027026%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 2.7027027027027026%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 1 / 37 (2.7%)</span>
+                                <span><strong>Fielded:</strong> 1/37 (2.7%)</span>
                                 <span><strong>Target:</strong> 37</span>
                                 <span><strong>Open:</strong> 36</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -390,11 +407,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 60-69 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 11.11111111111111%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 11.11111111111111%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 4 / 36 (11.1%)</span>
+                                <span><strong>Fielded:</strong> 4/36 (11.1%)</span>
                                 <span><strong>Target:</strong> 36</span>
                                 <span><strong>Open:</strong> 32</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -403,11 +420,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 50-59 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 2.127659574468085%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 2.127659574468085%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 1 / 47 (2.1%)</span>
+                                <span><strong>Fielded:</strong> 1/47 (2.1%)</span>
                                 <span><strong>Target:</strong> 47</span>
                                 <span><strong>Open:</strong> 46</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -416,11 +433,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 40-49 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 52 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/52 (0.0%)</span>
                                 <span><strong>Target:</strong> 52</span>
                                 <span><strong>Open:</strong> 52</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -429,11 +446,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 30-39 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 52 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/52 (0.0%)</span>
                                 <span><strong>Target:</strong> 52</span>
                                 <span><strong>Open:</strong> 52</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -442,11 +459,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 25-29 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 26 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/26 (0.0%)</span>
                                 <span><strong>Target:</strong> 26</span>
                                 <span><strong>Open:</strong> 26</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -455,11 +472,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 18-24 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 36 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/36 (0.0%)</span>
                                 <span><strong>Target:</strong> 36</span>
                                 <span><strong>Open:</strong> 36</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -472,18 +489,18 @@
             <div class="survey-row" onclick="toggleQuota('45951118', event)">
                 <div class="survey-name">BWS Tracker wave 263 DANS</div>
                 <div class="survey-progress">
-                    <div class="progress-text">12 / 200 (6.0%)</div>
+                    <div class="progress-text">13 / 200 (6.5%)</div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 6.0%"></div>
+                        <div class="progress-fill" style="width: 6.5%"></div>
                     </div>
                 </div>
                 <div class="metric">
                     <div class="metric-label">CPI</div>
-                    <div>$3.33</div>
+                    <div>$3.31</div>
                 </div>
                 <div class="metric">
                     <div class="metric-label">Cost</div>
-                    <div>$40.00</div>
+                    <div>$43.00</div>
                 </div>
                 <div class="metric">
                     <div class="metric-label">LOI</div>
@@ -491,17 +508,17 @@
                 </div>
                 <div class="metric">
                     <div class="metric-label">IR</div>
-                    <div>6000.0%</div>
+                    <div>60.0%</div>
                 </div>
                 <div class="quota-details" id="quota-45951118">
 <div class="quota-section-title">Quota Details</div><div class="quota-group"><div class="quota-group-title">Nested</div>
                         <div class="quota-item">
                             <div class="quota-name">Male, 50-74 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 6.896551724137931%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 6.896551724137931%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 2 / 29 (6.9%)</span>
+                                <span><strong>Fielded:</strong> 2/29 (6.9%)</span>
                                 <span><strong>Target:</strong> 29</span>
                                 <span><strong>Open:</strong> 27</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -510,11 +527,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 40-49 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 4.545454545454546%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 4.545454545454546%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 1 / 22 (4.5%)</span>
+                                <span><strong>Fielded:</strong> 1/22 (4.5%)</span>
                                 <span><strong>Target:</strong> 22</span>
                                 <span><strong>Open:</strong> 21</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -523,11 +540,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 30-39 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 4.545454545454546%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 4.545454545454546%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 1 / 22 (4.5%)</span>
+                                <span><strong>Fielded:</strong> 1/22 (4.5%)</span>
                                 <span><strong>Target:</strong> 22</span>
                                 <span><strong>Open:</strong> 21</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -536,11 +553,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 18-29 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 27 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/27 (0.0%)</span>
                                 <span><strong>Target:</strong> 27</span>
                                 <span><strong>Open:</strong> 27</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -549,24 +566,24 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 50-74 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 13.793103448275861%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 17.24137931034483%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 4 / 29 (13.8%)</span>
+                                <span><strong>Fielded:</strong> 5/29 (17.2%)</span>
                                 <span><strong>Target:</strong> 29</span>
-                                <span><strong>Open:</strong> 25</span>
+                                <span><strong>Open:</strong> 24</span>
                                 <span><strong>In Progress:</strong> 0</span>
                             </div>
                         </div>
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 40-49 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 22 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/22 (0.0%)</span>
                                 <span><strong>Target:</strong> 22</span>
                                 <span><strong>Open:</strong> 22</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -575,11 +592,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 30-39 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 13.636363636363635%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 13.636363636363635%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 3 / 22 (13.6%)</span>
+                                <span><strong>Fielded:</strong> 3/22 (13.6%)</span>
                                 <span><strong>Target:</strong> 22</span>
                                 <span><strong>Open:</strong> 19</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -588,11 +605,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 18-29 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 3.7037037037037033%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 3.7037037037037033%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 1 / 27 (3.7%)</span>
+                                <span><strong>Fielded:</strong> 1/27 (3.7%)</span>
                                 <span><strong>Target:</strong> 27</span>
                                 <span><strong>Open:</strong> 26</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -624,17 +641,17 @@
                 </div>
                 <div class="metric">
                     <div class="metric-label">IR</div>
-                    <div>7000.0%</div>
+                    <div>70.0%</div>
                 </div>
                 <div class="quota-details" id="quota-45923280">
 <div class="quota-section-title">Quota Details</div><div class="quota-group"><div class="quota-group-title">Nested</div>
                         <div class="quota-item">
                             <div class="quota-name">50-65 yr, Male</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 53.333333333333336%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 53.333333333333336%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 32 / 60 (53.3%)</span>
+                                <span><strong>Fielded:</strong> 32/60 (53.3%)</span>
                                 <span><strong>Target:</strong> 60</span>
                                 <span><strong>Open:</strong> 28</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -643,11 +660,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">50-65 yr, Female</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 10.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 10.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 6 / 60 (10.0%)</span>
+                                <span><strong>Fielded:</strong> 6/60 (10.0%)</span>
                                 <span><strong>Target:</strong> 60</span>
                                 <span><strong>Open:</strong> 54</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -656,11 +673,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">40-49 yr, Male</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 21.428571428571427%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 21.428571428571427%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 9 / 42 (21.4%)</span>
+                                <span><strong>Fielded:</strong> 9/42 (21.4%)</span>
                                 <span><strong>Target:</strong> 44</span>
                                 <span><strong>Open:</strong> 35</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -669,11 +686,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">40-49 yr, Female</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 0.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 0.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 0 / 42 (0.0%)</span>
+                                <span><strong>Fielded:</strong> 0/42 (0.0%)</span>
                                 <span><strong>Target:</strong> 42</span>
                                 <span><strong>Open:</strong> 42</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -682,11 +699,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">30-39 yr, Male</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 31.818181818181817%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 31.818181818181817%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 14 / 44 (31.8%)</span>
+                                <span><strong>Fielded:</strong> 14/44 (31.8%)</span>
                                 <span><strong>Target:</strong> 46</span>
                                 <span><strong>Open:</strong> 32</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -695,11 +712,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">30-39 yr, Female</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 4.545454545454546%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 4.545454545454546%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 2 / 44 (4.5%)</span>
+                                <span><strong>Fielded:</strong> 2/44 (4.5%)</span>
                                 <span><strong>Target:</strong> 44</span>
                                 <span><strong>Open:</strong> 42</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -708,11 +725,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">18-29 yr, Male</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 11.11111111111111%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 11.11111111111111%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 6 / 54 (11.1%)</span>
+                                <span><strong>Fielded:</strong> 6/54 (11.1%)</span>
                                 <span><strong>Target:</strong> 54</span>
                                 <span><strong>Open:</strong> 48</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -721,11 +738,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">18-29 yr, Female</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 12.962962962962962%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 12.962962962962962%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 7 / 54 (13.0%)</span>
+                                <span><strong>Fielded:</strong> 7/54 (13.0%)</span>
                                 <span><strong>Target:</strong> 54</span>
                                 <span><strong>Open:</strong> 47</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -757,17 +774,17 @@
                 </div>
                 <div class="metric">
                     <div class="metric-label">IR</div>
-                    <div>7000.0%</div>
+                    <div>70.0%</div>
                 </div>
                 <div class="quota-details" id="quota-45886288">
 <div class="quota-section-title">Quota Details</div><div class="quota-group"><div class="quota-group-title">Nested</div>
                         <div class="quota-item">
                             <div class="quota-name">Male, 50-60 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 36.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 36.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 18 / 50 (36.0%)</span>
+                                <span><strong>Fielded:</strong> 18/50 (36.0%)</span>
                                 <span><strong>Target:</strong> 50</span>
                                 <span><strong>Open:</strong> 32</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -776,11 +793,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 40-49 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 27.631578947368425%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 27.631578947368425%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 42 / 152 (27.6%)</span>
+                                <span><strong>Fielded:</strong> 42/152 (27.6%)</span>
                                 <span><strong>Target:</strong> 152</span>
                                 <span><strong>Open:</strong> 110</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -789,11 +806,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 30-39 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 19.736842105263158%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 19.736842105263158%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 30 / 152 (19.7%)</span>
+                                <span><strong>Fielded:</strong> 30/152 (19.7%)</span>
                                 <span><strong>Target:</strong> 152</span>
                                 <span><strong>Open:</strong> 122</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -802,11 +819,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 26-29 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 15.384615384615385%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 15.384615384615385%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 4 / 26 (15.4%)</span>
+                                <span><strong>Fielded:</strong> 4/26 (15.4%)</span>
                                 <span><strong>Target:</strong> 26</span>
                                 <span><strong>Open:</strong> 22</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -815,11 +832,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Male, 21-25 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 45.45454545454545%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 45.45454545454545%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 5 / 11 (45.5%)</span>
+                                <span><strong>Fielded:</strong> 5/11 (45.5%)</span>
                                 <span><strong>Target:</strong> 11</span>
                                 <span><strong>Open:</strong> 6</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -828,11 +845,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 50-60 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 34.0%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 34.0%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 17 / 50 (34.0%)</span>
+                                <span><strong>Fielded:</strong> 17/50 (34.0%)</span>
                                 <span><strong>Target:</strong> 50</span>
                                 <span><strong>Open:</strong> 33</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -841,11 +858,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 40-49 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 32.23684210526316%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 32.23684210526316%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 49 / 152 (32.2%)</span>
+                                <span><strong>Fielded:</strong> 49/152 (32.2%)</span>
                                 <span><strong>Target:</strong> 152</span>
                                 <span><strong>Open:</strong> 103</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -854,11 +871,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 30-39 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 21.710526315789476%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 21.710526315789476%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 33 / 152 (21.7%)</span>
+                                <span><strong>Fielded:</strong> 33/152 (21.7%)</span>
                                 <span><strong>Target:</strong> 152</span>
                                 <span><strong>Open:</strong> 119</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -867,11 +884,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 26-29 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 23.076923076923077%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 23.076923076923077%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 6 / 26 (23.1%)</span>
+                                <span><strong>Fielded:</strong> 6/26 (23.1%)</span>
                                 <span><strong>Target:</strong> 26</span>
                                 <span><strong>Open:</strong> 20</span>
                                 <span><strong>In Progress:</strong> 0</span>
@@ -880,11 +897,11 @@
 
                         <div class="quota-item">
                             <div class="quota-name">Female, 21-25 yr</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: 9.090909090909092%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: 9.090909090909092%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> 1 / 11 (9.1%)</span>
+                                <span><strong>Fielded:</strong> 1/11 (9.1%)</span>
                                 <span><strong>Target:</strong> 11</span>
                                 <span><strong>Open:</strong> 10</span>
                                 <span><strong>In Progress:</strong> 0</span>

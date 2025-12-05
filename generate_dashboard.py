@@ -232,9 +232,9 @@ def generate_html(surveys, quotas_data):
         .quota-details {{
             display: none;
             grid-column: 1 / -1;
-            padding: 24px 0 0 0;
-            border-top: 2px solid #e2e8f0;
-            margin-top: 20px;
+            padding: 16px 0 0 0;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
         }}
         
         .survey-row.expanded .quota-details {{
@@ -242,51 +242,68 @@ def generate_html(surveys, quotas_data):
         }}
         
         .quota-section-title {{
-            font-size: 16px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 16px;
-        }}
-        
-        .quota-group {{
-            margin-bottom: 24px;
-        }}
-        
-        .quota-group-title {{
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: #475569;
             margin-bottom: 12px;
-            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }}
+        
+        .quota-group {{
+            margin-bottom: 16px;
+        }}
+        
+        .quota-group-title {{
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
             border-bottom: 1px solid #e2e8f0;
         }}
         
         .quota-item {{
-            padding: 16px;
-            margin-bottom: 12px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
             background: white;
-            border-radius: 6px;
-            border-left: 3px solid #2563eb;
+            border-radius: 4px;
+            border-left: 2px solid #2563eb;
         }}
         
         .quota-name {{
             font-weight: 600;
             color: #1e293b;
-            margin-bottom: 12px;
-            font-size: 14px;
+            margin-bottom: 6px;
+            font-size: 12px;
         }}
         
         .quota-progress {{
-            font-size: 12px;
+            font-size: 11px;
             color: #64748b;
-            margin-top: 8px;
+            margin-top: 6px;
             display: flex;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }}
         
         .quota-progress span {{
             display: inline-block;
+        }}
+        
+        .quota-progress-bar {{
+            width: 100%;
+            height: 18px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 6px 0;
+        }}
+        
+        .quota-progress-fill {{
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.3s ease;
         }}
         
         .empty {{
@@ -362,8 +379,16 @@ def generate_html(surveys, quotas_data):
             # Format LOI (Length of Interview) - usually in minutes
             loi_display = f"{loi:.1f} min" if loi > 0 else "N/A"
             
-            # Format IR (Incidence Rate) - usually as percentage
-            ir_display = f"{incidence * 100:.1f}%" if incidence > 0 else "N/A"
+            # Format IR (Incidence Rate) - check if already percentage or decimal
+            if incidence > 0:
+                if incidence > 1:
+                    # Already a percentage (e.g., 75 means 75%)
+                    ir_display = f"{incidence:.1f}%"
+                else:
+                    # Decimal format (e.g., 0.75 means 75%)
+                    ir_display = f"{incidence * 100:.1f}%"
+            else:
+                ir_display = "N/A"
             
             html += f"""
             <div class="survey-row" onclick="toggleQuota('{survey_id}', event)">
@@ -422,11 +447,11 @@ def generate_html(surveys, quotas_data):
                         html += f"""
                         <div class="quota-item">
                             <div class="quota-name">{name}</div>
-                            <div class="progress-bar" style="margin: 8px 0;">
-                                <div class="progress-fill" style="width: {min(quota_progress, 100)}%"></div>
+                            <div class="quota-progress-bar">
+                                <div class="quota-progress-fill" style="width: {min(quota_progress, 100)}%"></div>
                             </div>
                             <div class="quota-progress">
-                                <span><strong>Fielded:</strong> {fielded:,} / {goal:,} ({quota_progress:.1f}%)</span>
+                                <span><strong>Fielded:</strong> {fielded:,}/{goal:,} ({quota_progress:.1f}%)</span>
                                 <span><strong>Target:</strong> {current_target:,}</span>
                                 <span><strong>Open:</strong> {currently_open:,}</span>
                                 <span><strong>In Progress:</strong> {in_progress:,}</span>
@@ -436,7 +461,7 @@ def generate_html(surveys, quotas_data):
                     
                     html += '</div>'
             else:
-                html += '<div class="quota-section-title">No quota data available</div>'
+                html += '<div class="quota-section-title" style="color: #94a3b8;">No quota data available</div>'
             
             html += """
                 </div>
