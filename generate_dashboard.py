@@ -87,60 +87,52 @@ def generate_html(surveys, quotas_data):
         
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #f5f7fa;
+            background: #f8fafc;
             min-height: 100vh;
             padding: 0;
-            color: #2c3e50;
+            color: #1e293b;
         }}
         
         .header-bar {{
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: #1e293b;
             color: white;
-            padding: 24px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 32px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }}
         
         .container {{
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }}
         
         .header {{
             text-align: center;
-            margin-bottom: 40px;
         }}
         
         .header h1 {{
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 600;
             margin-bottom: 8px;
             color: white;
         }}
         
         .header p {{
-            font-size: 14px;
-            color: rgba(255,255,255,0.9);
-            opacity: 0.9;
-        }}
-        
-        .stats-summary {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }}
-        
-        .summary-card {{
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-left: 4px solid #2563eb;
-        }}
-        
-        .summary-label {{
             font-size: 13px;
+            color: rgba(255,255,255,0.8);
+        }}
+        
+        .active-surveys-count {{
+            background: white;
+            padding: 24px 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+            text-align: center;
+        }}
+        
+        .active-surveys-count .label {{
+            font-size: 14px;
             color: #64748b;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -148,191 +140,148 @@ def generate_html(surveys, quotas_data):
             font-weight: 600;
         }}
         
-        .summary-value {{
-            font-size: 28px;
+        .active-surveys-count .value {{
+            font-size: 36px;
             font-weight: 700;
             color: #1e293b;
         }}
         
-        .survey-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 24px;
-            margin-bottom: 30px;
-        }}
-        
-        .survey-card {{
+        .surveys-list {{
             background: white;
-            padding: 28px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-top: 4px solid #2563eb;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
         }}
         
-        .survey-card:hover {{
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        .survey-row {{
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: grid;
+            grid-template-columns: 2fr 1fr 100px 120px 80px 80px;
+            gap: 20px;
+            align-items: center;
         }}
         
-        .survey-header {{
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 16px;
+        .survey-row:hover {{
+            background: #f8fafc;
         }}
         
-        .survey-id {{
-            color: #2563eb;
+        .survey-row:last-child {{
+            border-bottom: none;
+        }}
+        
+        .survey-row.expanded {{
+            background: #f1f5f9;
+        }}
+        
+        .survey-name {{
             font-weight: 600;
-            font-size: 13px;
-            background: #eff6ff;
-            padding: 4px 12px;
-            border-radius: 6px;
-            display: inline-block;
-        }}
-        
-        .status-badge {{
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }}
-        
-        .status-active {{
-            background: #d1fae5;
-            color: #065f46;
-        }}
-        
-        .survey-card h3 {{
             color: #1e293b;
-            margin: 16px 0;
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 1.4;
+            font-size: 15px;
         }}
         
-        .progress-container {{
-            margin: 20px 0;
-        }}
-        
-        .progress-header {{
+        .survey-progress {{
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 13px;
-            color: #64748b;
+            flex-direction: column;
+            gap: 6px;
         }}
         
         .progress-bar {{
             width: 100%;
-            height: 32px;
+            height: 24px;
             background: #e2e8f0;
-            border-radius: 8px;
+            border-radius: 4px;
             overflow: hidden;
             position: relative;
         }}
         
         .progress-fill {{
             height: 100%;
-            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+            background: #2563eb;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 600;
             transition: width 0.3s ease;
         }}
         
-        .stats {{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
+        .progress-text {{
+            font-size: 12px;
+            color: #64748b;
         }}
         
-        .stat {{
-            text-align: center;
-            padding: 12px;
-            background: #f8fafc;
-            border-radius: 8px;
+        .metric {{
+            text-align: right;
+            font-size: 14px;
+            color: #1e293b;
+            font-weight: 500;
         }}
         
-        .stat-label {{
+        .metric-label {{
             font-size: 11px;
             color: #64748b;
-            margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }}
+        
+        .quota-details {{
+            display: none;
+            grid-column: 1 / -1;
+            padding: 24px 0 0 0;
+            border-top: 2px solid #e2e8f0;
+            margin-top: 20px;
+        }}
+        
+        .survey-row.expanded .quota-details {{
+            display: block;
+        }}
+        
+        .quota-section-title {{
+            font-size: 16px;
             font-weight: 600;
-        }}
-        
-        .stat-value {{
-            font-size: 20px;
-            font-weight: 700;
             color: #1e293b;
-        }}
-        
-        .quota-section {{
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            margin-top: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }}
-        
-        .quota-section h3 {{
-            font-size: 24px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 16px;
         }}
         
         .quota-group {{
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }}
         
-        .quota-group h4 {{
-            color: #1e293b;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #2563eb;
-            font-size: 18px;
+        .quota-group-title {{
+            font-size: 14px;
             font-weight: 600;
+            color: #475569;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
         }}
         
         .quota-item {{
-            padding: 18px;
+            padding: 16px;
             margin-bottom: 12px;
-            background: #f8fafc;
-            border-radius: 8px;
-            border-left: 4px solid #2563eb;
-            transition: background 0.2s;
-        }}
-        
-        .quota-item:hover {{
-            background: #f1f5f9;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #2563eb;
         }}
         
         .quota-name {{
             font-weight: 600;
             color: #1e293b;
             margin-bottom: 12px;
-            font-size: 15px;
+            font-size: 14px;
         }}
         
         .quota-progress {{
-            font-size: 13px;
+            font-size: 12px;
             color: #64748b;
             margin-top: 8px;
             display: flex;
-            gap: 16px;
+            gap: 20px;
             flex-wrap: wrap;
         }}
         
@@ -343,16 +292,27 @@ def generate_html(surveys, quotas_data):
         .empty {{
             background: white;
             padding: 60px;
-            border-radius: 12px;
+            border-radius: 8px;
             text-align: center;
             color: #64748b;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }}
         
         .empty h2 {{
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 8px;
             color: #1e293b;
+        }}
+        
+        @media (max-width: 1200px) {{
+            .survey-row {{
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }}
+            
+            .metric {{
+                text-align: left;
+            }}
         }}
     </style>
 </head>
@@ -375,138 +335,135 @@ def generate_html(surveys, quotas_data):
         </div>
 """
     else:
-        # Calculate summary stats
+        # Count active surveys
         total_surveys = len(surveys)
-        total_completes = sum(s.get('completes', 0) for s in surveys.values())
-        total_target = sum(s.get('target', 0) for s in surveys.values())
-        total_cost = sum(s.get('currentCost', 0) for s in surveys.values())
-        overall_progress = (total_completes / total_target * 100) if total_target > 0 else 0
         
-        # Summary section
+        # Active surveys count
         html += f"""
-        <div class="stats-summary">
-            <div class="summary-card">
-                <div class="summary-label">Active Surveys</div>
-                <div class="summary-value">{total_surveys}</div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-label">Overall Progress</div>
-                <div class="summary-value">{overall_progress:.1f}%</div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-label">Total Completes</div>
-                <div class="summary-value">{total_completes:,}</div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-label">Total Cost</div>
-                <div class="summary-value">${total_cost:,.2f}</div>
-            </div>
+        <div class="active-surveys-count">
+            <div class="label">Active Surveys</div>
+            <div class="value">{total_surveys}</div>
         </div>
 """
         
-        html += '<div class="survey-grid">'
+        # Surveys list
+        html += '<div class="surveys-list">'
         
         for survey_id, survey in surveys.items():
             target = survey.get('target', 0)
             completes = survey.get('completes', 0)
             progress = (completes / target * 100) if target > 0 else 0
             title = survey.get('title', 'Untitled Survey')
-            status = survey.get('status', 'Unknown')
             cpi = survey.get('cpi', 0)
             cost = survey.get('currentCost', 0)
+            loi = survey.get('loi', 0)
+            incidence = survey.get('incidence', 0)
             
-            status_class = 'status-active' if status.lower() == 'active' else ''
+            # Format LOI (Length of Interview) - usually in minutes
+            loi_display = f"{loi:.1f} min" if loi > 0 else "N/A"
+            
+            # Format IR (Incidence Rate) - usually as percentage
+            ir_display = f"{incidence * 100:.1f}%" if incidence > 0 else "N/A"
             
             html += f"""
-            <div class="survey-card">
-                <div class="survey-header">
-                    <div class="survey-id">ID: {survey_id}</div>
-                    <div class="status-badge {status_class}">{status}</div>
-                </div>
-                <h3>{title}</h3>
-                <div class="progress-container">
-                    <div class="progress-header">
-                        <span>Progress</span>
-                        <span><strong>{completes:,}</strong> / {target:,} ({progress:.1f}%)</span>
-                    </div>
+            <div class="survey-row" onclick="toggleQuota('{survey_id}', event)">
+                <div class="survey-name">{title}</div>
+                <div class="survey-progress">
+                    <div class="progress-text">{completes:,} / {target:,} ({progress:.1f}%)</div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: {progress}%">
-                            {progress:.1f}%
-                        </div>
+                        <div class="progress-fill" style="width: {min(progress, 100)}%"></div>
                     </div>
                 </div>
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-label">CPI</div>
-                        <div class="stat-value">${cpi:.2f}</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-label">Cost</div>
-                        <div class="stat-value">${cost:,.2f}</div>
-                    </div>
+                <div class="metric">
+                    <div class="metric-label">CPI</div>
+                    <div>${cpi:.2f}</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Cost</div>
+                    <div>${cost:,.2f}</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">LOI</div>
+                    <div>{loi_display}</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">IR</div>
+                    <div>{ir_display}</div>
+                </div>
+                <div class="quota-details" id="quota-{survey_id}">
+"""
+            
+            # Add quota details for this survey
+            quotas = quotas_data.get(survey_id, [])
+            if quotas:
+                html += '<div class="quota-section-title">Quota Details</div>'
+                
+                # Group quotas
+                grouped = {}
+                for quota in quotas:
+                    group = quota.get('group_key', 'General')
+                    if group not in grouped:
+                        grouped[group] = []
+                    grouped[group].append(quota)
+                
+                for group_name, group_quotas in grouped.items():
+                    html += f'<div class="quota-group">'
+                    html += f'<div class="quota-group-title">{group_name}</div>'
+                    
+                    for quota in group_quotas:
+                        name = generate_quota_name(quota)
+                        fielded = quota.get('achieved', 0)
+                        goal = quota.get('required_count', 0)
+                        quota_progress = (fielded / goal * 100) if goal > 0 else 0
+                        current_target = quota.get('current_target', goal)
+                        currently_open = quota.get('currently_open', 0)
+                        in_progress = quota.get('in_progress', 0)
+                        
+                        html += f"""
+                        <div class="quota-item">
+                            <div class="quota-name">{name}</div>
+                            <div class="progress-bar" style="margin: 8px 0;">
+                                <div class="progress-fill" style="width: {min(quota_progress, 100)}%"></div>
+                            </div>
+                            <div class="quota-progress">
+                                <span><strong>Fielded:</strong> {fielded:,} / {goal:,} ({quota_progress:.1f}%)</span>
+                                <span><strong>Target:</strong> {current_target:,}</span>
+                                <span><strong>Open:</strong> {currently_open:,}</span>
+                                <span><strong>In Progress:</strong> {in_progress:,}</span>
+                            </div>
+                        </div>
+"""
+                    
+                    html += '</div>'
+            else:
+                html += '<div class="quota-section-title">No quota data available</div>'
+            
+            html += """
                 </div>
             </div>
 """
         
         html += '</div>'
-        
-        # Add quota sections
-        for survey_id, quotas in quotas_data.items():
-            if not quotas:
-                continue
-            
-            html += f'<div class="quota-section">'
-            html += f'<h3>Quota Details for Survey {survey_id}</h3>'
-            
-            # Group quotas
-            grouped = {}
-            for quota in quotas:
-                group = quota.get('group_key', 'General')
-                if group not in grouped:
-                    grouped[group] = []
-                grouped[group].append(quota)
-            
-            for group_name, group_quotas in grouped.items():
-                html += f'<div class="quota-group">'
-                html += f'<h4>{group_name}</h4>'
-                
-                for quota in group_quotas:
-                    name = generate_quota_name(quota)
-                    fielded = quota.get('achieved', 0)
-                    goal = quota.get('required_count', 0)
-                    progress = (fielded / goal * 100) if goal > 0 else 0
-                    current_target = quota.get('current_target', goal)
-                    currently_open = quota.get('currently_open', 0)
-                    in_progress = quota.get('in_progress', 0)
-                    
-                    html += f"""
-                    <div class="quota-item">
-                        <div class="quota-name">{name}</div>
-                        <div class="progress-container">
-                            <div class="progress-header">
-                                <span>Fielded</span>
-                                <span><strong>{fielded:,}</strong> / {goal:,} ({progress:.1f}%)</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: {progress}%">
-                                    {progress:.1f}%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="quota-progress">
-                            <span><strong>Target:</strong> {current_target:,}</span>
-                            <span><strong>Open:</strong> {currently_open:,}</span>
-                            <span><strong>In Progress:</strong> {in_progress:,}</span>
-                        </div>
-                    </div>
-"""
-                
-                html += '</div>'
-            
-            html += '</div>'
     
-    html += """
+    html += f"""
     </div>
+    <script>
+        function toggleQuota(surveyId, event) {{
+            event.stopPropagation();
+            const row = event.currentTarget || event.target.closest('.survey-row');
+            const quotaDetails = document.getElementById('quota-' + surveyId);
+            
+            if (row.classList.contains('expanded')) {{
+                row.classList.remove('expanded');
+            }} else {{
+                // Close all other expanded rows
+                document.querySelectorAll('.survey-row.expanded').forEach(r => {{
+                    r.classList.remove('expanded');
+                }});
+                row.classList.add('expanded');
+            }}
+        }}
+    </script>
 </body>
 </html>
 """
