@@ -86,162 +86,286 @@ def generate_html(surveys, quotas_data):
         }}
         
         body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
+            color: #2c3e50;
+        }}
+        
+        .header-bar {{
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 24px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }}
         
         .container {{
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 30px 20px;
         }}
         
         .header {{
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 40px;
         }}
         
         .header h1 {{
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
         }}
         
         .header p {{
-            color: #666;
             font-size: 14px;
+            color: rgba(255,255,255,0.9);
+            opacity: 0.9;
+        }}
+        
+        .stats-summary {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }}
+        
+        .summary-card {{
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #2563eb;
+        }}
+        
+        .summary-label {{
+            font-size: 13px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }}
+        
+        .summary-value {{
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
         }}
         
         .survey-grid {{
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
         }}
         
         .survey-card {{
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid #2563eb;
         }}
         
-        .survey-card h3 {{
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 18px;
+        .survey-card:hover {{
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }}
+        
+        .survey-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
         }}
         
         .survey-id {{
-            color: #667eea;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 10px;
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 13px;
+            background: #eff6ff;
+            padding: 4px 12px;
+            border-radius: 6px;
+            display: inline-block;
+        }}
+        
+        .status-badge {{
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }}
+        
+        .status-active {{
+            background: #d1fae5;
+            color: #065f46;
+        }}
+        
+        .survey-card h3 {{
+            color: #1e293b;
+            margin: 16px 0;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+        }}
+        
+        .progress-container {{
+            margin: 20px 0;
+        }}
+        
+        .progress-header {{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #64748b;
         }}
         
         .progress-bar {{
             width: 100%;
-            height: 25px;
-            background: #e0e0e0;
-            border-radius: 12px;
+            height: 32px;
+            background: #e2e8f0;
+            border-radius: 8px;
             overflow: hidden;
-            margin: 10px 0;
+            position: relative;
         }}
         
         .progress-fill {{
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 12px;
-            font-weight: bold;
+            font-size: 13px;
+            font-weight: 600;
+            transition: width 0.3s ease;
         }}
         
         .stats {{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 15px;
+            gap: 16px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
         }}
         
         .stat {{
             text-align: center;
-            padding: 10px;
-            background: #f5f5f5;
-            border-radius: 5px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
         }}
         
         .stat-label {{
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 5px;
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }}
         
         .stat-value {{
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
         }}
         
         .quota-section {{
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 32px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }}
+        
+        .quota-section h3 {{
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #e2e8f0;
         }}
         
         .quota-group {{
-            margin-bottom: 25px;
+            margin-bottom: 32px;
         }}
         
         .quota-group h4 {{
-            color: #333;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
+            color: #1e293b;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2563eb;
+            font-size: 18px;
+            font-weight: 600;
         }}
         
         .quota-item {{
-            padding: 15px;
-            margin-bottom: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            border-left: 4px solid #667eea;
+            padding: 18px;
+            margin-bottom: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            transition: background 0.2s;
+        }}
+        
+        .quota-item:hover {{
+            background: #f1f5f9;
         }}
         
         .quota-name {{
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+            font-size: 15px;
         }}
         
         .quota-progress {{
-            font-size: 14px;
-            color: #666;
-            margin-top: 5px;
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 8px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }}
+        
+        .quota-progress span {{
+            display: inline-block;
         }}
         
         .empty {{
             background: white;
-            padding: 40px;
-            border-radius: 10px;
+            padding: 60px;
+            border-radius: 12px;
             text-align: center;
-            color: #666;
+            color: #64748b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }}
+        
+        .empty h2 {{
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #1e293b;
         }}
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>PureSpectrum Survey Dashboard</h1>
-            <p>Last updated: {timestamp}</p>
+    <div class="header-bar">
+        <div class="container">
+            <div class="header">
+                <h1>PureSpectrum Survey Dashboard</h1>
+                <p>Last updated: {timestamp}</p>
+            </div>
         </div>
+    </div>
+    <div class="container">
 """
     
     if not surveys or len(surveys) == 0:
@@ -251,11 +375,38 @@ def generate_html(surveys, quotas_data):
         </div>
 """
     else:
+        # Calculate summary stats
+        total_surveys = len(surveys)
+        total_completes = sum(s.get('completes', 0) for s in surveys.values())
+        total_target = sum(s.get('target', 0) for s in surveys.values())
+        total_cost = sum(s.get('currentCost', 0) for s in surveys.values())
+        overall_progress = (total_completes / total_target * 100) if total_target > 0 else 0
+        
+        # Summary section
+        html += f"""
+        <div class="stats-summary">
+            <div class="summary-card">
+                <div class="summary-label">Active Surveys</div>
+                <div class="summary-value">{total_surveys}</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Overall Progress</div>
+                <div class="summary-value">{overall_progress:.1f}%</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Total Completes</div>
+                <div class="summary-value">{total_completes:,}</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Total Cost</div>
+                <div class="summary-value">${total_cost:,.2f}</div>
+            </div>
+        </div>
+"""
+        
         html += '<div class="survey-grid">'
         
         for survey_id, survey in surveys.items():
-            target = survey.get('target', 0)
-            completes = survey.get('completes', 0)
             target = survey.get('target', 0)
             completes = survey.get('completes', 0)
             progress = (completes / target * 100) if target > 0 else 0
@@ -264,31 +415,34 @@ def generate_html(surveys, quotas_data):
             cpi = survey.get('cpi', 0)
             cost = survey.get('currentCost', 0)
             
+            status_class = 'status-active' if status.lower() == 'active' else ''
+            
             html += f"""
             <div class="survey-card">
-                <div class="survey-id">Survey ID: {survey_id}</div>
+                <div class="survey-header">
+                    <div class="survey-id">ID: {survey_id}</div>
+                    <div class="status-badge {status_class}">{status}</div>
+                </div>
                 <h3>{title}</h3>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: {progress}%">
-                        {progress:.1f}%
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>Progress</span>
+                        <span><strong>{completes:,}</strong> / {target:,} ({progress:.1f}%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {progress}%">
+                            {progress:.1f}%
+                        </div>
                     </div>
                 </div>
                 <div class="stats">
-                    <div class="stat">
-                        <div class="stat-label">Status</div>
-                        <div class="stat-value">{status}</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-label">Progress</div>
-                        <div class="stat-value">{completes}/{target}</div>
-                    </div>
                     <div class="stat">
                         <div class="stat-label">CPI</div>
                         <div class="stat-value">${cpi:.2f}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-label">Cost</div>
-                        <div class="stat-value">${cost:.2f}</div>
+                        <div class="stat-value">${cost:,.2f}</div>
                     </div>
                 </div>
             </div>
@@ -328,14 +482,21 @@ def generate_html(surveys, quotas_data):
                     html += f"""
                     <div class="quota-item">
                         <div class="quota-name">{name}</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: {progress}%">
-                                {progress:.1f}%
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Fielded</span>
+                                <span><strong>{fielded:,}</strong> / {goal:,} ({progress:.1f}%)</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: {progress}%">
+                                    {progress:.1f}%
+                                </div>
                             </div>
                         </div>
                         <div class="quota-progress">
-                            Fielded: {fielded}/{goal} | Target: {current_target} | 
-                            Open: {currently_open} | In Progress: {in_progress}
+                            <span><strong>Target:</strong> {current_target:,}</span>
+                            <span><strong>Open:</strong> {currently_open:,}</span>
+                            <span><strong>In Progress:</strong> {in_progress:,}</span>
                         </div>
                     </div>
 """
