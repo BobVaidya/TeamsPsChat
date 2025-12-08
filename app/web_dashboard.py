@@ -624,8 +624,20 @@ async def dashboard_home():
             document.getElementById('last-updated').textContent = new Date().toLocaleString();
             
             try {{
-                const response = await fetch('/api/surveys');
-                if (!response.ok) throw new Error('Failed to load surveys');
+                // Add timeout to prevent hanging
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+                
+                const response = await fetch('/api/surveys', {{
+                    signal: controller.signal
+                }});
+                
+                clearTimeout(timeoutId);
+                
+                if (!response.ok) {{
+                    const errorText = await response.text();
+                    throw new Error(`HTTP ${{response.status}}: ${{errorText || 'Failed to load surveys'}}`);
+                }}
                 
                 const data = await response.json();
                 if (data.error) {{
@@ -703,8 +715,13 @@ async def dashboard_home():
                 content.innerHTML = html;
                 
             }} catch (err) {{
-                error.textContent = 'Error: ' + err.message;
+                let errorMsg = 'Error: ' + err.message;
+                if (err.name === 'AbortError') {{
+                    errorMsg = 'Error: Request timed out. The API is taking too long to respond. This might be due to PureSpectrum authentication. Check Render logs for details.';
+                }}
+                error.textContent = errorMsg;
                 error.style.display = 'block';
+                console.error('Dashboard error:', err);
             }} finally {{
                 loading.style.display = 'none';
             }}
